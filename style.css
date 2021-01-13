@@ -1,0 +1,519 @@
+/* *********** Custom Properties ************** */
+:root{
+    --font: "Raleway", sans-serif;
+    --backgroundOld: #0F2027;  /* fallback for old browsers */
+    --backgroundChrome: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+    --backgroundFirefox: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    --white-color: #fff;
+    --gray-color: rgba(128, 128, 128,.6);
+    --white-opacity-color: rgba(255,255,255,.2);
+    --header-height: 4rem;
+    --black-color: #000;
+    --black-opacity-color: rgba(0,0,0,.5);
+}
+
+/* ************************************************* Reset ******************************************************* */
+html{
+    box-sizing: border-box;
+    font-family: var(--font);
+    font-size: 16px;
+    background: var(--backgroundOld);
+    background: var(--backgroundChrome);
+    background: var(--backgroundFirefox);
+    color: var(--white-color);
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    margin: 0;
+    font-size: 2rem;
+}
+
+h2{
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+h3{
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+h4{
+    margin: 0;
+    font-size: 1rem;
+}
+
+h5{
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+h6{
+    margin: 0;
+    font-size: 0.7rem;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul, li{
+    list-style: none;
+}
+
+.container{
+    width: 90%;
+    height: 100%;
+    margin: auto;
+}
+
+/* ************************************************** NavMenu **************************************************** */
+header{
+    width: 100%;
+    height: var(--header-height);
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
+    /* mismo color del fondo para que tenga un fondo solido 
+    y no solo se superponga al contenido que tenga debajo al scrollear */
+    background: var(--backgroundOld);
+    background: var(--backgroundChrome);
+    background: var(--backgroundFirefox);
+}
+
+.mobile-hr{
+    color: var(--white-color);
+}
+
+.desktop-hr{
+    display: none;
+    color: var(--white-color);
+}
+
+.nav-menu{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo h2{
+    letter-spacing: .2rem;
+    color: var(--white-color);
+}
+.nav-logo a:hover,
+.nav-logo a:focus{
+    opacity: .8;
+}
+
+.btn-menu{
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+.btn-menu:hover,
+.btn-menu:focus{
+    opacity: .6;
+    transform: scale(1.4, 1.4);
+    transform-origin: center;
+    transition: all .2s ease;
+}
+
+.panel-menu{
+    position: fixed;
+    bottom: 4rem;
+    right: 0;
+    width: 40%;
+    height: auto;
+    /* background: rgba(255, 255, 255, .3); */
+    border-top: 1px solid var(--white-color);
+    border-left: 1px solid var(--white-color);
+    border-right: 1px solid var(--white-color);
+    opacity: 1;
+    transition: all .5s ease;
+    z-index: 1000;
+    visibility: visible;
+}
+
+.panel-menu.none{
+    /* display: none; */
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(20rem);
+}
+
+.panel-items{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-end;
+    background: var(--backgroundOld);
+    background: var(--backgroundChrome);
+    background: var(--backgroundFirefox);
+}
+
+.panel-items a{
+    width: 100%;
+    padding: 1rem;
+    color: #fff;
+    text-align: center;
+}
+
+.panel-items a:hover,
+.panel-items a:focus{
+    background-color: rgba(19, 18, 18, 0.5);
+}
+
+/* ************************************************* Presentation ************************************************** */
+#presentation{
+    margin: 1rem 0;
+}
+.presentation{
+    /* display: grid; */
+    height: 70vh;
+    /* grid-template-columns: 1fr 1fr; */
+    position: relative;
+    transition: all .5s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s ease;
+}
+.presentation-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    z-index: 2;
+    margin-top: -10rem;
+    transition: all .3s ease;
+}
+
+.presentation-content h2{
+    text-align: center;
+    margin: .5rem 0;
+    font-size: 3rem;
+}
+
+.presentation-content p{
+    text-align: center;
+}
+
+.presentation-content i{
+    padding: 1rem 0;
+    margin: 0 .2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.presentation-content i:hover{
+    transform: scale(1.5,1.5);
+}
+
+.presentation-img{
+    width: 100%;
+    height: 50vh;
+    position: absolute;
+    bottom: 0;
+    background-image: url('assets/undraw_code_thinking_1jeh.svg');
+    background-size: contain;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    transition: all .3s ease;
+}
+
+.modal-container{
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: var(--black-opacity-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+.modal{
+    width: 60%;
+    height: 40%;
+    margin-top: -10rem;
+    border-radius: 2rem;
+    background: var(--white-color);
+    color: var(--black-color);
+    padding: 2rem;
+    position: relative;
+    transform: scale(1);
+    transition: all .5s ease;
+
+    color: orange;
+}
+
+.modal-close{
+    visibility: hidden;
+    transform: scale(0);
+    transition: all .5s ease;
+}
+
+.modal>i{
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.modal>i:hover{
+    transform: scale(1.4,1.4);
+    transform-origin: center;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    margin: .5rem 0;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+}
+
+.content p{
+    margin: .5rem 0;
+    text-align: center;
+}
+
+.content i{
+    margin: .5rem 0;
+}
+
+/* ******************************************* Project Section **************************************************** */
+.still-working{
+    margin: 2rem auto;
+    height: 80vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white-opacity-color);
+    position: relative;
+    border-radius: 1rem; 
+}
+
+.still-working h2{
+    position: absolute;
+}
+
+.work-img{
+    width: 80%;
+    height: 80%;
+}
+
+.projects{
+    display: flex;
+    background-color: var(--white-opacity-color);
+    margin: 2rem auto;
+}
+
+/* ******************************************* About Section **************************************************** */
+.about-content{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: repeat(2, 40vh);
+    grid-template-areas: "AboutInfo   AboutTechs"
+                         "AboutInfo   AboutButtons";
+    border-radius: 1rem;
+}
+
+.about-info{
+    grid-area: AboutInfo;
+    width: 100%;
+    height: 100%;
+    background: var(--white-opacity-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+.about-info h1{
+    margin-bottom: .5rem;
+    font-size: 2.5rem;
+    text-align: center;
+}
+.about-info img{
+    width: 80%;
+    height: 50%;
+    margin-bottom: .5rem;
+}
+.about-info p{
+    text-align: center;
+}
+
+.about-technology{
+    grid-area: AboutTechs;
+    width: 100%;
+    height: 100%;
+    background: var(--gray-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 0 .5rem;
+}
+
+.about-technology p{
+    margin-top: 1rem;
+    text-align: right;
+}
+
+.about-technology .icons{
+    margin: 1rem .2rem;
+}
+
+.technology-info{
+    grid-area: AboutButtons;
+    width: 100%;
+    height: 100%;
+    background: var(--white-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 0 .5rem;
+}
+
+.technology-info p{
+    margin: .5rem 0;
+}
+
+.technology-info .info-icons{
+    width: 100%;
+    margin: .5rem 0;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+}
+
+.technology-info .info-icons a{
+    margin: 0 .5rem;
+    margin-bottom: .4rem;
+    font-size: 1.4rem;
+}
+
+/* ******************************************* Media Queries **************************************************** */
+
+@media screen and (min-width: 768px){
+    /* ******************************************* Presentation ************************************************ */
+    /* .presentation{
+        height: 80vh;
+    } */
+    .presentation-content{
+        margin-top: -16rem;
+    }
+    .presentation-img{
+        height: 40vh;
+        background-position: 50% 60%;
+    }
+
+    .modal{
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 992px){
+    /* ********************************************* NavMenu *************************************************** */
+    header{
+    position: sticky;
+    top: 0;
+    }
+    .mobile-hr{
+        display: none;
+    }
+    .desktop-hr{
+        display: block;
+    }
+    .btn-menu{
+        display: none;
+    }
+    
+    .nav-menu{
+        justify-content: space-between;
+    }
+
+    .nav-logo h2{
+        width: 12rem;
+    }
+
+    .panel-menu{
+    position: static;
+    width: auto;
+    border: none;
+    z-index: 1000;
+    transition: none;
+    }
+
+    .panel-menu.none{
+        visibility: hidden;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .panel-items{
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 0 2rem;
+        margin: 0 2rem;
+        background: none;
+    }
+
+    .panel-items a{
+        width: auto;
+        font-size: 1.4rem;
+        text-align: center;
+        transition: all .3s ease;
+    }
+
+    .panel-items a:hover,
+    .panel-items a:focus{
+        background-color: inherit;
+        transform: scale(1.1, 1.1);
+        opacity: .7;
+    }
+    
+    /* **************************************************** Presentation ****************************************** */
+    /* .presentation{
+        height: 70vh;
+    } */
+    .modal{
+        width: 40%;
+    }
+}
+
+@media screen and (min-width: 1024px){
+}
