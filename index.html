@@ -24,9 +24,9 @@
             <div class="panel-menu none">
                 <div class="panel-items">
                     <a href="#"><i class="fas fa-home"></i> Home</a>
-                    <a href="#projects"><i class="fas fa-home"></i> Projects</a>
-                    <a href="#about"><i class="fas fa-home"></i> About</a>
-                    <a href="#"><i class="fas fa-home"></i> ITEM 4</a>
+                    <a href="#projects"><i class="fas fa-rocket"></i> Projects</a>
+                    <a href="#about"><i class="fas fa-user"></i> About</a>
+                    <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
                 </div>
             </div>
         </nav>
@@ -47,9 +47,10 @@
                         <i class="fab fa-git fa-2x git"></i>
                         <i class="fab fa-php fa-2x php"></i>
                     </div> 
--->
-            </div>
-            <div class="presentation-img">
+                -->
+                <div class="presentation-img">
+                    <img src="assets/undraw_code_thinking_1jeh.svg" alt="Presentation image">
+                </div>
             </div>
         </div>
         <div class="modal-container">
@@ -81,36 +82,81 @@
 
     <section id="about">
         <div class="container about-content">
-            <div class="about-info">
+            <div class="about-presentation">
                 <h1>Reyner Soto</h1>
-                <img src="assets/customer-2.jpg" alt="Mi foto">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis asperiores tenetur pariatur quidem. Possimus, nihil?</p>
-                <p></p>
+                <img src="assets/Reyner.jpg" alt="Reyner Soto">
+                <div class="description-info">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis asperiores tenetur pariatur quidem. Possimus, nihil?</p>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis asperiores tenetur pariatur quidem. Possimus, nihil?</p>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis asperiores tenetur pariatur quidem. Possimus, nihil?</p>
+                </div>
+                
             </div>
-            <div class="about-technology">
+            <div class="about-info">
+                <h2>About Technologys</h2>
+                <hr>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis fugiat, alias quas natus harum dolores.</p>
-                <div class="icons">
-                    <i class="fab fa-js fa-2x"></i>
-                    <i class="fab fa-js fa-2x"></i>
-                    <i class="fab fa-js fa-2x"></i>
-                    <i class="fab fa-js fa-2x"></i>
-                    <i class="fab fa-js fa-2x"></i>
+                <div class="tech-icons">
+                    <i class="fab fa-html5 fa-2x html"></i>
+                    <i class="fab fa-css3-alt fa-2x css"></i>
+                    <i class="fab fa-js fa-2x javascript"></i>
+                    <i class="fab fa-php fa-2x php"></i>
+                    <i class="fas fa-database fa-2x bbdd"></i>
+                    <i class="fab fa-bootstrap fa-2x bootstrap"></i>
+                    <i class="fab fa-github fa-2x github"></i>
                 </div>
             </div>
-            <div class="technology-info">
-                <p style="color:#000">conocimientos sobre equis tecnologias</p>
-                <div class="info-icons">
-                    <a href="#">boton</a>
-                    <a href="#">boton</a>
-                    <a href="#">boton</a>
-                    <a href="#">boton</a>
-                    <a href="#">boton</a>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="form-container container">
+            <h2>¿Tienes algun consejo? Hazmelo saber</h2>
+            <form id="contact-form" novalidate>
+                <div class="form-group">
+                    <label for="name">Nombre:</label>
+                    <input type="text" name="name" placeholder="Ingresa un nombre" title="El campo solo acepta letras y espacios en blanco" pattern="^([A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]{3,15})$" autocomplete="off" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" placeholder="Ingresa un email" title="Email incorrecto, ingresa un email valido" pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" autocomplete="off" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Asunto:</label>
+                    <input type="text" name="subject" placeholder="Ingresa el asunto del mensaje" title="El campo no puede quedar vacio" autocomplete="off" required>
+                </div>
+                <div class="form-group">
+                    <label for="comments">Mensaje:</label>
+                    <textarea name="comments" rows="4" placeholder="Ingresa tu mensaje" data-pattern="^.{1,255}$" title="Tu mensaje no debe quedar vacio o contener mas de 255 caracteres" autocomplete="off" required></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="submit" name="enviar" value="Enviar">
+                </div>
+                <div class="contact-form-loader no-display">
+                    <img src="assets/loader.svg" alt="Cargando">
+                </div>
+                <div class="contact-form-response no-display"></div>
+            </form>
+            
+            <div class="contact-info">
+                <h3>Informacion de contacto</h3>
+                <div class="info">
+                    <a style="cursor: text;"><i class="fas fa-envelope fa-2x"></i><span>reynersoto10@gmail.com</span></a>
+                </div>
+                <div class="info">
+                    <a href="#"><i class="fab fa-whatsapp fa-2x"></i><span>+583 99 513 20 55</span></a>
+                </div>
+                <div class="info">
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-2x"></i><span>Facebook</span></a>
+                </div>
+                <div class="info">
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener"><i class="fab fa-instagram fa-2x"></i><span>Instagram</span></a>
                 </div>
             </div>
         </div>
     </section>
     
-    <h2>contenido</h2>
+    <h2 class="container">contenido</h2>
     <br>
     <br>
     <br>

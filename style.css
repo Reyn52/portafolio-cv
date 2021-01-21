@@ -4,12 +4,15 @@
     --backgroundOld: #0F2027;  /* fallback for old browsers */
     --backgroundChrome: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
     --backgroundFirefox: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    --white-color: #fff;
+    --backgroundChrome-left: -webkit-linear-gradient(to left, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+    --backgroundFirefox-left: linear-gradient(to left, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    --main-color: #fff;
     --gray-color: rgba(128, 128, 128,.6);
     --white-opacity-color: rgba(255,255,255,.2);
     --header-height: 4rem;
     --black-color: #000;
     --black-opacity-color: rgba(0,0,0,.5);
+    --error-red-color: #cf0b0c;
 }
 
 /* ************************************************* Reset ******************************************************* */
@@ -20,7 +23,7 @@ html{
     background: var(--backgroundOld);
     background: var(--backgroundChrome);
     background: var(--backgroundFirefox);
-    color: var(--white-color);
+    color: var(--main-color);
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
@@ -66,178 +69,38 @@ h6{
 
 a{
     text-decoration: none;
+    color: var(--main-color);
 }
 
 ul, li{
     list-style: none;
 }
 
+textarea{
+    resize: none;
+    font-family: var(--font);
+}
+
+/* 
+eliminar borde en campos input invalidos, no es un borde ni un outline, en firefox es un box-shadow
+
+:invalid {
+  box-shadow: none;
+}
+
+:-moz-submit-invalid {
+  box-shadow: none;
+}
+
+:-moz-ui-invalid {
+  box-shadow: none;
+} */
+
+/* ********************************************** Components ****************************************************** */
 .container{
     width: 90%;
     height: 100%;
     margin: auto;
-}
-
-/* ************************************************** NavMenu **************************************************** */
-header{
-    width: 100%;
-    height: var(--header-height);
-    position: fixed;
-    bottom: 0;
-    z-index: 999;
-    /* mismo color del fondo para que tenga un fondo solido 
-    y no solo se superponga al contenido que tenga debajo al scrollear */
-    background: var(--backgroundOld);
-    background: var(--backgroundChrome);
-    background: var(--backgroundFirefox);
-}
-
-.mobile-hr{
-    color: var(--white-color);
-}
-
-.desktop-hr{
-    display: none;
-    color: var(--white-color);
-}
-
-.nav-menu{
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.nav-logo h2{
-    letter-spacing: .2rem;
-    color: var(--white-color);
-}
-.nav-logo a:hover,
-.nav-logo a:focus{
-    opacity: .8;
-}
-
-.btn-menu{
-    position: absolute;
-    right: 0;
-    cursor: pointer;
-    transition: all .2s ease;
-}
-
-.btn-menu:hover,
-.btn-menu:focus{
-    opacity: .6;
-    transform: scale(1.4, 1.4);
-    transform-origin: center;
-    transition: all .2s ease;
-}
-
-.panel-menu{
-    position: fixed;
-    bottom: 4rem;
-    right: 0;
-    width: 40%;
-    height: auto;
-    /* background: rgba(255, 255, 255, .3); */
-    border-top: 1px solid var(--white-color);
-    border-left: 1px solid var(--white-color);
-    border-right: 1px solid var(--white-color);
-    opacity: 1;
-    transition: all .5s ease;
-    z-index: 1000;
-    visibility: visible;
-}
-
-.panel-menu.none{
-    /* display: none; */
-    visibility: hidden;
-    opacity: 0;
-    transform: translateY(20rem);
-}
-
-.panel-items{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    justify-content: flex-end;
-    background: var(--backgroundOld);
-    background: var(--backgroundChrome);
-    background: var(--backgroundFirefox);
-}
-
-.panel-items a{
-    width: 100%;
-    padding: 1rem;
-    color: #fff;
-    text-align: center;
-}
-
-.panel-items a:hover,
-.panel-items a:focus{
-    background-color: rgba(19, 18, 18, 0.5);
-}
-
-/* ************************************************* Presentation ************************************************** */
-#presentation{
-    margin: 1rem 0;
-}
-.presentation{
-    /* display: grid; */
-    height: 70vh;
-    /* grid-template-columns: 1fr 1fr; */
-    position: relative;
-    transition: all .5s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: all .3s ease;
-}
-.presentation-content{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    z-index: 2;
-    margin-top: -10rem;
-    transition: all .3s ease;
-}
-
-.presentation-content h2{
-    text-align: center;
-    margin: .5rem 0;
-    font-size: 3rem;
-}
-
-.presentation-content p{
-    text-align: center;
-}
-
-.presentation-content i{
-    padding: 1rem 0;
-    margin: 0 .2rem;
-    text-align: center;
-    cursor: pointer;
-    transition: all .5s ease;
-}
-
-.presentation-content i:hover{
-    transform: scale(1.5,1.5);
-}
-
-.presentation-img{
-    width: 100%;
-    height: 50vh;
-    position: absolute;
-    bottom: 0;
-    background-image: url('assets/undraw_code_thinking_1jeh.svg');
-    background-size: contain;
-    background-position: 50% 100%;
-    background-repeat: no-repeat;
-    transition: all .3s ease;
 }
 
 .modal-container{
@@ -260,7 +123,7 @@ header{
     height: 40%;
     margin-top: -10rem;
     border-radius: 2rem;
-    background: var(--white-color);
+    background: var(--main-color);
     color: var(--black-color);
     padding: 2rem;
     position: relative;
@@ -308,9 +171,157 @@ header{
     margin: .5rem 0;
 }
 
+.no-display{
+    display: none;
+}
+
+.active{
+    display: flex;
+    transition: all .3s ease;
+}
+
+/* ************************************************** NavMenu **************************************************** */
+header{
+    width: 100%;
+    height: var(--header-height);
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
+    /* mismo color del fondo para que tenga un fondo solido 
+    y no solo se superponga al contenido que tenga debajo al scrollear */
+    background: var(--backgroundOld);
+    background: var(--backgroundChrome);
+    background: var(--backgroundFirefox);
+}
+
+.mobile-hr{
+    color: var(--main-color);
+}
+
+.desktop-hr{
+    display: none;
+    color: var(--main-color);
+}
+
+.nav-menu{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo h2{
+    letter-spacing: .2rem;
+    color: var(--main-color);
+}
+.nav-logo a:hover,
+.nav-logo a:focus{
+    opacity: .8;
+}
+
+.btn-menu{
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+.btn-menu:hover,
+.btn-menu:focus{
+    opacity: .6;
+    transform: scale(1.4, 1.4);
+    transform-origin: center;
+    transition: all .2s ease;
+}
+
+.panel-menu{
+    position: fixed;
+    bottom: 4rem;
+    right: 0;
+    width: 40%;
+    height: auto;
+    /* background: rgba(255, 255, 255, .3); */
+    border-top: 1px solid var(--main-color);
+    border-left: 1px solid var(--main-color);
+    border-right: 1px solid var(--main-color);
+    opacity: 1;
+    transition: all .5s ease;
+    z-index: 1000;
+    visibility: visible;
+}
+
+.panel-menu.none{
+    /* display: none; */
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(20rem);
+}
+
+.panel-items{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-end;
+    background: var(--backgroundOld);
+    background: var(--backgroundChrome-left);
+    background: var(--backgroundFirefox-left);
+}
+
+.panel-items a{
+    width: 100%;
+    padding: 1rem;
+    color: #fff;
+    text-align: center;
+}
+
+.panel-items a:hover,
+.panel-items a:focus{
+    background-color: rgba(19, 18, 18, 0.5);
+}
+
+/* ************************************************* Presentation ************************************************** */
+.presentation{
+    height: 70vh;
+    position: relative;
+    transition: all .3s ease;
+}
+.presentation-content{
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.presentation-content h2{
+    text-align: center;
+    margin: .5rem 0;
+    font-size: 3rem;
+}
+
+.presentation-content p{
+    text-align: center;
+    font-size: 1.1rem;
+    z-index: 2;
+}
+
+.presentation-img{
+    margin-top: -2rem;
+    width: 100%;
+    height: 100%;
+}
+
+.presentation-img img{
+    width: 100%;
+    height: 50vh;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
 /* ******************************************* Project Section **************************************************** */
 .still-working{
-    margin: 2rem auto;
+    margin-bottom: 1rem;
     height: 80vh;
     overflow: hidden;
     display: flex;
@@ -330,115 +341,305 @@ header{
     height: 80%;
 }
 
-.projects{
+/* .projects{
     display: flex;
     background-color: var(--white-opacity-color);
     margin: 2rem auto;
-}
+} */
 
 /* ******************************************* About Section **************************************************** */
 .about-content{
+    height: auto;
     display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: repeat(2, 40vh);
-    grid-template-areas: "AboutInfo   AboutTechs"
-                         "AboutInfo   AboutButtons";
-    border-radius: 1rem;
+    grid-template-areas: 'presentation presentation'
+                         '  info         info';
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 60vh auto;
+    transition: all .3s ease;
+}
+
+.about-presentation{
+    grid-area: presentation;
+    display: grid;
+    grid-template-areas: 'name         name'
+                         'image        image'
+                         'description  description';
+    transition: all .3s ease;
+}
+
+.about-presentation h1{
+    grid-area: name;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    padding: .5rem;
+    font-size: 3rem;
+    transition: all .3s ease;
+}
+
+.about-presentation img{
+    grid-area: image;
+    margin-top: -1rem;
+    height: 80%;
+    width: 50%;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    padding: 0 1rem;
+    border-radius: .5rem;
+    transition: all .3s ease;
+}
+
+.about-presentation .description-info{
+    grid-area: description;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-self: center;
+    padding: 0 1rem;
+    transition: all .3s ease;
+    margin-top: -1rem;
+    margin-bottom: .5rem;
+}
+
+.about-presentation .description-info p{
+    text-align: center;
+    margin: .2rem 0;
+    transition: all .3s ease;
 }
 
 .about-info{
-    grid-area: AboutInfo;
-    width: 100%;
-    height: 100%;
-    background: var(--white-opacity-color);
+    grid-area: info;
+    padding: .5rem 1rem;
     display: flex;
     flex-direction: column;
+    /* justify-content: center; */
     align-items: center;
-    justify-content: center;
-    padding: 1rem;
+    border: 1px solid var(--main-color);
+    border-radius: .5rem;
+    transition: all .3s ease;
 }
-.about-info h1{
-    margin-bottom: .5rem;
-    font-size: 2.5rem;
-    text-align: center;
+
+.about-info h2{
+    margin: .1rem 0;
+    transition: all .3s ease;
 }
-.about-info img{
-    width: 80%;
-    height: 50%;
-    margin-bottom: .5rem;
+
+.about-info hr{
+    color: var(--main-color);
+    width: 100%;
 }
 .about-info p{
     text-align: center;
+    padding: .2rem 1rem;
+    transition: all .3s ease;
 }
 
-.about-technology{
-    grid-area: AboutTechs;
-    width: 100%;
-    height: 100%;
-    background: var(--gray-color);
+.tech-icons{
+    display: flex;
+    align-items: center;
+}
+
+.about-info .tech-icons i{
+    padding: 1rem 0;
+    margin: 0 .2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.about-info .tech-icons i:hover{
+    transform: scale(1.5,1.5);
+}
+/* ******************************************* Contact Form **************************************************** */
+#contact{
+    margin: 1rem 0;
+}
+
+.form-container{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-    padding: 0 .5rem;
 }
 
-.about-technology p{
-    margin-top: 1rem;
-    text-align: right;
+.form-container h2{
+    text-align: center;
 }
 
-.about-technology .icons{
-    margin: 1rem .2rem;
+#contact-form{
+    margin: .5rem 0;
+    width: 80%;
+    border: 1px solid var(--main-color);
+    border-radius: .5rem;
+    align-self: center;
+    transition: all .3s ease;
 }
 
-.technology-info{
-    grid-area: AboutButtons;
-    width: 100%;
-    height: 100%;
-    background: var(--white-color);
+.form-group{
+    margin: .5rem 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-    padding: 0 .5rem;
-}
-
-.technology-info p{
-    margin: .5rem 0;
-}
-
-.technology-info .info-icons{
+    padding: 0 1rem;
     width: 100%;
+}
+
+.form-group label{
+    margin-bottom: .3rem;
+}
+
+.form-group input:not(input[type=submit]),
+.form-group textarea{
+    /* border-radius: .5rem; */
+    padding: .2rem .5rem;
+    transition: all .3s ease;
+    background: none;
+    border: none;
+    color: var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+}
+
+:invalid{
+    box-shadow: none;
+}
+
+.form-group input:not(input[type=submit]).error,
+.form-group textarea.error{
+    border-bottom: 1px solid var(--error-red-color);
+}
+
+.form-group input:focus:not(input[type=submit]),
+.form-group input:hover:not(input[type=submit]),
+.form-group textarea:focus,
+.form-group textarea:hover{
+    transform: scale(1.05);
+}
+
+.form-group input[type=submit]{
+    width: 50%;
+    align-self: center;
+}
+.form-group input[type=submit]:hover,
+.form-group input[type=submit]:focus{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.contact-form-error{
+    margin-top: .3rem;
+    padding: .2rem .5rem;
+    font-size: .8rem;
+    width: 100%;
+    background-color: var(--error-red-color);
+    border-radius: .5rem;
+    transition: all .3s ease;
+}
+
+.contact-form-loader{
+    text-align: center;
+}
+
+.contact-form-response{
+    text-align: center;
+    padding-bottom: .5rem;
+}
+
+.contact-info{
+    border: 1px solid var(--main-color);
+    border-radius: .5rem;
+    width: 80%;
+    align-self: center;
+    padding: 1rem .5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-info h3{
+    text-align: center;
+    margin-bottom: .5rem;
+}
+
+.contact-info .info{
     margin: .5rem 0;
     display: flex;
-    flex-direction: row-reverse;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
-.technology-info .info-icons a{
-    margin: 0 .5rem;
-    margin-bottom: .4rem;
-    font-size: 1.4rem;
+.contact-info .info a{
+    cursor: pointer;
+    padding: .2rem 0;
 }
+
+.contact-info .info a:hover{
+    opacity: .7;
+}
+
+.contact-info .info i{
+    margin-right: .5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ******************************************* Media Queries **************************************************** */
 
 @media screen and (min-width: 768px){
-    /* ******************************************* Presentation ************************************************ */
-    /* .presentation{
-        height: 80vh;
-    } */
-    .presentation-content{
-        margin-top: -16rem;
-    }
-    .presentation-img{
-        height: 40vh;
-        background-position: 50% 60%;
-    }
-
     .modal{
         width: 50%;
+    }
+    /* ******************************************* Presentation ************************************************ */
+    .presentation-img img{
+        top: 7rem;
+    } 
+    /* ******************************************* About Section ************************************************ */
+    .about-presentation{
+        grid-template-areas: 'name     name'
+                         'image   description'
+                         'image   description';
+                         grid-template-rows: 10vh 25vh 25vh;
+    grid-template-columns: 60% 1fr;
+
+    }
+    .about-presentation h1{
+    padding: 0;
+    }
+    .about-presentation img{
+        height: 90%;
+        width: 80%;
+    }
+    .about-presentation .description-info{
+        flex-direction: column;
+        align-self: center;
+        justify-self: center;
+        padding: 0;
+    }
+
+    .about-presentation .description-info p{
+        text-align: center;
+        margin: .2rem 0;
+        margin-left: -2rem;
+        padding-right: 1rem;
+        font-size: 1.1rem;
+    }
+    /* ******************************************* Contact Form ************************************************ */
+    #contact-form{
+        width: 60%;
+    }
+    .contact-info{
+        width: 60%;
     }
 }
 
@@ -507,11 +708,28 @@ header{
     }
     
     /* **************************************************** Presentation ****************************************** */
-    /* .presentation{
-        height: 70vh;
-    } */
+    .presentation-img img{
+        filter: blur(1px);
+    }
     .modal{
         width: 40%;
+    }
+    /* ******************************************* About Section ************************************************ */
+    .about-presentation{
+    grid-template-columns: 40% 1fr;
+
+    }
+    .about-presentation h1{
+    padding: 0;
+    }
+    .about-presentation img{
+        height: 90%;
+        width: 80%;
+    }
+    .about-presentation .description-info p{
+        font-size: 1.2rem;
+        margin: .4rem 0;
+        margin-left: -3rem;
     }
 }
 
