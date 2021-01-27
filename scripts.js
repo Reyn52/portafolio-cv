@@ -103,13 +103,12 @@
 
 })();
 
-/* ************************************** Modal ******************************************* */
-
+/* ************************************** Modal - About ******************************************* */
 (()=>{
     const $techIcons = document.querySelectorAll('.tech-icons i');
-    const $modalContainer = document.querySelector('.modal-container');
-    const $modal = document.querySelector('.modal');
-    const $modalContent = document.querySelector('.modal .content')
+    const $modalContainer = document.querySelector('#about .modal-container');
+    const $modal = document.querySelector('#about .modal');
+    const $modalContent = document.querySelector('#about .modal .content');
     
     $techIcons.forEach((el)=>{
         el.addEventListener('click',()=>{
@@ -167,6 +166,7 @@
             } else if(e.key == 'Escape'){
                 $modalContainer.style.visibility = 'hidden';
                 $modal.classList.add('modal-close');
+                $modalContent.innerHTML = "";
             }
         })
         });
@@ -178,6 +178,7 @@
             // console.log('matches')
             $modalContainer.style.visibility = 'hidden';
             $modal.classList.add('modal-close');
+            $modalContent.innerHTML = "";
         }
     });
     
@@ -187,7 +188,7 @@
 (() =>{
     const $form = document.getElementById('contact-form');
     const $inputs = document.querySelectorAll('#contact-form .form-group [required]');
-    const $submitBtn = document.querySelector("[type=submit]");
+    const $submitBtn = document.querySelector(".submit-btn");
 
     $inputs.forEach((el) => {
         const $span = document.createElement('span');
@@ -258,11 +259,11 @@
 
             $response.innerHTML = `
             <h3>Revisa que todos los datos ingresados sean validos</h3>`;
+            $submitBtn.setAttribute('disabled','true');
 
             setTimeout(() => {
                 $loader.classList.add('no-display');
                 $response.classList.remove('no-display');
-                $submitBtn.setAttribute('disabled','true');
             }, 1000);
 
             setTimeout(() => {
@@ -305,4 +306,115 @@
         }
     })
 
+})();
+
+/* ************************************** Modal - Card ******************************************* */
+(()=>{
+    const $modalContainer = document.querySelector('#projects .modal-container');
+    const $modal = document.querySelector('#projects .modal-image');
+
+    document.addEventListener('click',(e)=>{
+        if(e.target.matches('.card .card-image img')){   
+            $modalContainer.style.visibility = 'visible';
+            $modal.classList.remove('modal-close');
+
+            /* CERRAR EL MODAL CON LA TECLA ESCAPE */
+            document.addEventListener('keydown', (e) => {
+                // console.log(e)
+                if (!(e.key == 'Escape')) {
+                    e.preventDefault();
+                } else if (e.key == 'Escape') {
+                    $modalContainer.style.visibility = 'hidden';
+                    $modal.classList.add('modal-close');
+                }
+            });
+        }
+    })
+
+    /* CERRAR EL MODAL CON EL CLICK AL ICONO DE CERRAR O AL HACER CLICK FUERA DEL CONTENIDO */
+    document.addEventListener('click', (e) => {
+        // console.log(e.target);
+        if (e.target.matches('.close-btn') || e.target.matches('.modal-container')) {
+            // console.log('matches')
+            $modalContainer.style.visibility = 'hidden';
+            $modal.classList.add('modal-close');
+        }
+    });
+})();
+
+/* ************************************** Carousel ******************************************* */
+(()=>{
+    const $images = document.querySelectorAll('#projects .content-image img');
+    const $prevBtn = document.querySelector('.prev-btn');
+    const $nextBtn = document.querySelector('.next-btn');
+    const $imageInfo = document.querySelector('#projects .content-image .image-info p');
+
+    let i = 0;
+    
+    $imageInfo.textContent = `${$images[i].title}`;
+
+    // IMAGEN ANTEROR AL HACER CLICK AL BOTON DE ANTERIOR
+    $prevBtn.addEventListener('click',(e)=>{
+        $images[i].classList.remove('active-image');
+        $images[i].classList.add('inactive-image');
+        $imageInfo.textContent = "";
+        i--;
+
+        if(i < 0){
+            i = $images.length - 1;
+        };
+    
+        $images[i].classList.remove('inactive-image');
+        $images[i].classList.add('active-image');
+        $imageInfo.textContent = `${$images[i].title}`;
+    });
+    // IMAGEN ANTERIOR CON TECLA DE LA FLECHA IZQUIERDA 
+    document.addEventListener('keydown',(e)=>{
+        if(e.key == 'ArrowLeft'){
+            $images[i].classList.remove('active-image');
+            $images[i].classList.add('inactive-image');
+            $imageInfo.textContent = "";
+            i--;
+            
+            if (i < 0) {
+                i = $images.length - 1;
+            };
+            
+            $images[i].classList.remove('inactive-image');
+            $images[i].classList.add('active-image');
+            $imageInfo.textContent = `${$images[i].title}`;
+        }
+    });
+    // IMAGEN SIGUIENTE AL HACER CLICK AL BOTON DE SIGUIENTE
+    $nextBtn.addEventListener('click',(e)=>{
+    $images[i].classList.remove('active-image');
+        $images[i].classList.add('inactive-image');
+        $imageInfo.textContent = "";
+        i++;
+
+        if(i >= $images.length){
+            i = 0;
+        };
+    
+        $images[i].classList.remove('inactive-image');
+        $images[i].classList.add('active-image');
+        $imageInfo.textContent = `${$images[i].title}`;
+    });
+    // IMAGEN SIGUIENTE AL PRESIONAR LA TECLA DE LA FLECHA DERECHA
+    document.addEventListener('keydown', (e) => {
+        if (e.key == 'ArrowRight') {
+            $images[i].classList.remove('active-image');
+            $images[i].classList.add('inactive-image');
+            $imageInfo.textContent = "";
+            i++;
+
+            if (i >= $images.length) {
+                i = 0;
+            };
+
+            $images[i].classList.remove('inactive-image');
+            $images[i].classList.add('active-image');
+            $imageInfo.textContent = `${$images[i].title}`;
+        }
+    });
 })();

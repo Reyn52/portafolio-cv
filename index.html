@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Reyner Soto, Personal Page</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
 </head>
@@ -23,10 +23,10 @@
             </div>
             <div class="panel-menu none">
                 <div class="panel-items">
-                    <a href="#"><i class="fas fa-home"></i> Home</a>
-                    <a href="#projects"><i class="fas fa-rocket"></i> Projects</a>
-                    <a href="#about"><i class="fas fa-user"></i> About</a>
-                    <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+                    <a href="#"><i class="fas fa-home"></i> Inicio</a>
+                    <a href="#projects"><i class="fas fa-rocket"></i> Proyectos</a>
+                    <a href="#about"><i class="fas fa-user"></i> Acerca</a>
+                    <a href="#contact"><i class="fas fa-envelope"></i> Contacto</a>
                 </div>
             </div>
         </nav>
@@ -39,52 +39,81 @@
                 <h2>Bienvenidos</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit quidem voluptatem quam alias. Fugit, magnam!</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, exercitationem.</p>
-<!--                     
-                    <div class="tech-icons">
-                        <i class="fab fa-html5 fa-2x html"></i>
-                        <i class="fab fa-css3 fa-2x css"></i>
-                        <i class="fab fa-js fa-2x javascript"></i>
-                        <i class="fab fa-git fa-2x git"></i>
-                        <i class="fab fa-php fa-2x php"></i>
-                    </div> 
-                -->
                 <div class="presentation-img">
-                    <img src="assets/undraw_code_thinking_1jeh.svg" alt="Presentation image">
-                </div>
-            </div>
-        </div>
-        <div class="modal-container">
-            <div class="modal modal-close">
-                <i class="fas fa-times close-btn"></i>
-                <div class="content">
-                    
+                    <img src="assets/undraw_code_thinking_1jeh.svg" alt="Imagen de presentación" title="Imagen usada como presentación en la bienvenida a la página">
                 </div>
             </div>
         </div>
     </section>
 
     <section id="projects">
-        <!-- *************************************** PRUEBA, ELIMINAR ******************************************* -->
-        <div class="container still-working">
-            <h2>Still working on this section</h2>
-            <img class='work-img' src="assets/undraw_server_down_s4lk.svg" alt="Still on work">
+        <h2>Proyectos</h2>
+        <hr>
+        
+        <div class="projects container">
+
+            <div class="meme">
+                <img src="assets/meme.jpg" alt="Meme" title="Meme de los padrinos mágicos">
+                <h3>Y aquí pusiera mis proyectos</h3>
+            </div>
+            <div class="meme">
+                <img src="assets/meme2.jpg" alt="Meme" title="Meme de los padrinos mágicos">
+                <h3>Si tuviera alguno</h3>
+            </div>
         </div>
-        <!-- *************************************** PRUEBA, ELIMINAR ******************************************* -->
 
-        <div class="projects container" style="display: none;">
-            <div class="projects-container">
-                <div>
-
+        <div class="container">
+            <p>Chistes aparte, no he tenido la oportunidad de trabajar en proyectos, estoy buscando la oportunidad.</p>
+            <p>Tengo este mini proyecto que estuve realizando, pero no esta, ni de cerca, finalizado:</p>
+            <div class="card">
+                <div class="card-title">
+                    <a href="https://promoeventos.000webhostapp.com/"><h4>PromoEventos</h4></a>
+                </div>
+                <div class="card-image">
+                    <img src="assets/promoeventos.png" alt="Imagen de muestra de la pagina promoeventos" title="Imagen del landing en la pagina de promoeventos">
+                </div>
+                <div class="card-content">
+                    <p>Una especie de "blog" que pretendía reunir la información necesaria de cada proveedor para que las personas pudieran cotizar y recibir asesoramiento en la realización de sus eventos sociales en la ciudad.</p>
+                </div>
+            </div>
+            <div class="modal-container">
+                <div class="modal-image modal-close">
+                    <i class="fas fa-times close-btn"></i>
+                    <div class="content-image">
+                        <img src="assets/promoeventos.png" alt="Imagen principal de landing en promoeventos" class="active-image" title="El landing en la pagina principal.">
+                        <img src="assets/promoeventos2.png" alt="Imagen del buscador + sección de presentación de algunos proveedores en promoeventos" class="inactive-image" title="Buscador y sección de muestra con algunos proveedores (se muestran de forma aleatoria, no siempre son los mismos).">
+                        <img src="assets/promoeventos3.png" alt="Imagen del formulario de contacto en promoeventos" class="inactive-image" title="Formulario e información de contacto.">
+                        <img src="assets/promoeventos4.png" alt="Cartas con cada tipo de proveedor en promoeventos" class="inactive-image" title="Sección con cada uno de los tipos de proveedores (las images de cada uno son solo de referencia y para prueba).">
+                        <img src="assets/promoeventos5.png" alt="Cartas con cada proveedor del tipo seleccionado en promoeventos" class="inactive-image" title="Cartas con una pequeña información del proveedor y en su parte posterior enlaces a redes sociales o a la página individual del proveedor dentro del mismo sitio.">
+                        <img src="assets/promoeventos6.png" alt="Imagen de ejemplo de la animación de las cartas de proveedor en promoeventos" class="inactive-image" title="Animación de giro de carta para acceder a la información en la parte posterior de la carta.">
+                        <img src="assets/promoeventos7.png" alt="Sección personal para cada proveedor de forma individual en promoeventos" class="inactive-image" title="Sección personal de cada proveedor con más informacion, imagenes y datos de contacto (reitero, las imagenes que tiene cada uno son solo de prueba).">
+                        <img src="assets/promoeventos8.png" alt="Imagen del modal para ver cada imagen de muestra del proveedor en promoeventos" class="inactive-image" title="Ejemplo del modal con las imagenes del proveedor, cada imagen es abierta y mostrada así para más detalle (este modal es de una libreria, en ese momento no sabía hacerlos por mi mismo).">
+                        <img src="assets/promoeventos9.png" alt="Imagen de muestra de la animación de tarjetas con información del proveedor en promoeventos" class="inactive-image" title="Animación de las tarjetas con información del proveedor, la idea era emular una serie de tarjetas de presentación; cada una contiene información de contacto">
+                        <img src="assets/promoeventos10.png" style="height: 50%;top:25%;" alt="Imagen del buscador en promoeventos" class="inactive-image" title='Busqueda en promoeventos (se evita la "inyección" de datos con PHP).'>
+                        <img src="assets/promoeventos11.png" alt="Imagen con muestra de resultados de la busqueda en promoeventos" class="inactive-image" title='Muestra de resultados de la busqueda realizada. Se muestra una pequeña información de cada proveedor que coincida con la busqueda y se puede ir a la sección personal de cada uno para más información.'>
+                        <img src="assets/promoeventos12.png" alt="Imagen con muestra en caso de resultado fallido de la busqueda en promoeventos" class="inactive-image" title='Muestra de mensaje de error al realizar la busqueda con botón de redireccionamiento a la página principal.'>
+                        <div class="image-info">
+                            <p></p>
+                        </div>
+                        <div class="prev-btn">
+                            <i class="fas fa-chevron-left"></i>
+                        </div>
+                        <div class="next-btn">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
+
     </section>
 
     <section id="about">
         <div class="container about-content">
             <div class="about-presentation">
                 <h1>Reyner Soto</h1>
-                <img src="assets/Reyner.jpg" alt="Reyner Soto">
+                <img src="assets/Reyner.jpg" alt="Foto de Reyner Soto" title="Fotografía de presentación en la sección">
                 <div class="description-info">
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis asperiores tenetur pariatur quidem. Possimus, nihil?</p>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis asperiores tenetur pariatur quidem. Possimus, nihil?</p>
@@ -105,14 +134,26 @@
                     <i class="fab fa-bootstrap fa-2x bootstrap"></i>
                     <i class="fab fa-github fa-2x github"></i>
                 </div>
+
+                <div class="modal-container">
+                    <div class="modal modal-close">
+                        <i class="fas fa-times close-btn"></i>
+                        <div class="content">
+                
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="contact">
         <div class="form-container container">
-            <h2>¿Tienes algun consejo? Hazmelo saber</h2>
+            <div class="form-legend">
+                <h2>¿Tienes algun consejo? Hazmelo saber</h2>
+            </div>
             <form id="contact-form" novalidate>
+                <legend>Formulario de contacto</legend>
                 <div class="form-group">
                     <label for="name">Nombre:</label>
                     <input type="text" name="name" placeholder="Ingresa un nombre" title="El campo solo acepta letras y espacios en blanco" pattern="^([A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]{3,15})$" autocomplete="off" required>
@@ -130,7 +171,7 @@
                     <textarea name="comments" rows="4" placeholder="Ingresa tu mensaje" data-pattern="^.{1,255}$" title="Tu mensaje no debe quedar vacio o contener mas de 255 caracteres" autocomplete="off" required></textarea>
                 </div>
                 <div class="form-group">
-                    <input type="submit" name="enviar" value="Enviar">
+                    <input type="submit" class="submit-btn" name="enviar" value="Enviar">
                 </div>
                 <div class="contact-form-loader no-display">
                     <img src="assets/loader.svg" alt="Cargando">
@@ -140,53 +181,33 @@
             
             <div class="contact-info">
                 <h3>Informacion de contacto</h3>
+                <hr>
+                <h4>Si me dejas un mensaje por aca, probablemente lo vea un millon de veces mas rapido <span><i class="fas fa-grin-beam-sweat"></i></span></h4>
+
                 <div class="info">
-                    <a style="cursor: text;"><i class="fas fa-envelope fa-2x"></i><span>reynersoto10@gmail.com</span></a>
+                    <div>
+                        <i class="fas fa-envelope fa-2x"></i><span>reynersoto10@gmail.com</span>
+                    </div>
+    
+                    <div>
+                        <i class="fab fa-whatsapp fa-2x"></i><span>+583 99 513 20 55</span>
+                    </div>
                 </div>
-                <div class="info">
-                    <a href="#"><i class="fab fa-whatsapp fa-2x"></i><span>+583 99 513 20 55</span></a>
-                </div>
-                <div class="info">
-                    <a href="https://www.facebook.com/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-2x"></i><span>Facebook</span></a>
-                </div>
-                <div class="info">
-                    <a href="https://www.instagram.com/" target="_blank" rel="noopener"><i class="fab fa-instagram fa-2x"></i><span>Instagram</span></a>
+
+                <div class="social-media">
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-2x"></i></a>
+                    
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener"><i class="fab fa-instagram fa-2x"></i></a>
+<!--                     
+                    <a href="https://www.github.com/" target="_blank" rel="noopener"><i class="fab fa-github fa-2x"></i></a>
+
+                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-2x"></i></a> 
+-->
                 </div>
             </div>
         </div>
     </section>
-    
-    <h2 class="container">contenido</h2>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+
 </body>
 
 <script src="scripts.js"></script>

@@ -8,10 +8,10 @@
     --backgroundFirefox-left: linear-gradient(to left, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     --main-color: #fff;
     --gray-color: rgba(128, 128, 128,.6);
-    --white-opacity-color: rgba(255,255,255,.2);
+    --white-opacity-color: rgba(255,255,255,.4);
     --header-height: 4rem;
     --black-color: #000;
-    --black-opacity-color: rgba(0,0,0,.5);
+    --black-opacity-color: rgba(0,0,0,.7);
     --error-red-color: #cf0b0c;
 }
 
@@ -81,6 +81,9 @@ textarea{
     font-family: var(--font);
 }
 
+:invalid{
+    box-shadow: none;
+}
 /* 
 eliminar borde en campos input invalidos, no es un borde ni un outline, en firefox es un box-shadow
 
@@ -124,13 +127,20 @@ eliminar borde en campos input invalidos, no es un borde ni un outline, en firef
     margin-top: -10rem;
     border-radius: 2rem;
     background: var(--main-color);
-    color: var(--black-color);
     padding: 2rem;
     position: relative;
     transform: scale(1);
     transition: all .5s ease;
+    color: #222;
+}
 
-    color: orange;
+.modal-image{
+    width: 80%;
+    height: 60vh;
+    transform: scale(1);
+    border-radius: .5rem;
+    position: relative;
+    transition: all .3s ease;
 }
 
 .modal-close{
@@ -147,8 +157,18 @@ eliminar borde en campos input invalidos, no es un borde ni un outline, en firef
     transition: all .5s ease;
 }
 
-.modal>i:hover{
-    transform: scale(1.4,1.4);
+.modal-image>i{
+    position: absolute;
+    top: -1.5rem;
+    right: .5rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: all .3s ease;
+}
+
+.modal>i:hover,
+.modal-image>i:hover{
+    transform: scale(1.4);
     transform-origin: center;
 }
 
@@ -171,6 +191,87 @@ eliminar borde en campos input invalidos, no es un borde ni un outline, en firef
     margin: .5rem 0;
 }
 
+.content-image{
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    transition: all .3s ease;
+    /* overflow: hidden; */
+}
+
+.content-image img{
+    width: 100%;
+    height: 50vh;
+    position: relative;
+    transition: all .3s ease;
+}
+
+.content-image img.active-image{
+    visibility: show;
+    position: absolute;
+    opacity: 1;
+    transform: scale(1);
+    transition: all 1s ease;
+    z-index: 10;
+}
+
+.content-image img.inactive-image{
+    visibility: hidden;
+    position: absolute;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 1s ease;
+    z-index: 0;
+}
+
+.content-image .image-info{
+    position: absolute;
+    width: 100%;
+    height: 5rem;
+    bottom: -5.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    transition: all .3s ease;
+}
+
+.content-image .image-info p{
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all .3s ease;
+}
+
+.content-image .prev-btn,
+.content-image .next-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    font-size: 2rem;
+    height: 100%;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.content-image .prev-btn{
+    left: -1.5rem;
+}
+
+.content-image .next-btn{
+    right: -1.5rem;
+}
+
+.content-image .prev-btn:hover,
+.content-image .next-btn:hover{
+    transform: scale(1.4);
+    opacity: .8;
+}
+
 .no-display{
     display: none;
 }
@@ -178,6 +279,12 @@ eliminar borde en campos input invalidos, no es un borde ni un outline, en firef
 .active{
     display: flex;
     transition: all .3s ease;
+}
+
+/* Arreglo necesario para evitar que el menu de navegacion para dispositivos moviles
+    cubra parte de lo que seria el ultimo elemento del body del documento */
+body:last-child{
+    margin-bottom: calc(var(--header-height) + 1rem);
 }
 
 /* ************************************************** NavMenu **************************************************** */
@@ -286,6 +393,7 @@ header{
     height: 70vh;
     position: relative;
     transition: all .3s ease;
+    margin-bottom: -4rem;
 }
 .presentation-content{
     margin-bottom: 2rem;
@@ -318,9 +426,8 @@ header{
     bottom: 0;
     z-index: -1;
 }
-
 /* ******************************************* Project Section **************************************************** */
-.still-working{
+/* .still-working{
     margin-bottom: 1rem;
     height: 80vh;
     overflow: hidden;
@@ -339,13 +446,109 @@ header{
 .work-img{
     width: 80%;
     height: 80%;
+} */
+
+#projects h2{
+    text-align: center;
+    margin: .3rem 0;
 }
 
-/* .projects{
+#projects hr{
+    color: var(--main-color);
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: .5rem;
+}
+
+.projects{
+    height: 60vh;
+    display: grid;
+    background: #222;
+    grid-template-rows: 30vh 30vh;
+}
+
+.projects .meme{
+    height: 30vh;
+    position: relative;
+}
+
+.projects img{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.projects .meme h3{
+    position: absolute;
+    right: .3rem;
+    top: .5rem;
+    font-size: 1.5rem;
+    text-align: right;
+    text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+    z-index: 100;
+}
+
+#projects div p{
+    text-align: justify;
+    margin: .3rem 0;
+}
+
+.card{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: .7rem;
+    display: grid;
+    grid-template-areas: "title"
+                         "image"
+                         "content";
+    grid-template-rows: 2rem 30vh auto;
+    border: 1px solid var(--main-color);
+    border-radius: .5rem;
+    transition: all .3s ease;
+}
+
+.card .card-title{
+    grid-area: title;
     display: flex;
-    background-color: var(--white-opacity-color);
-    margin: 2rem auto;
-} */
+    justify-content: center;
+    align-items: center;
+    transition: all .3s ease;
+}
+
+.card .card-title h4{
+    text-align: center;
+    transition: all .3s ease;
+}
+.card .card-title h4:hover{
+    text-decoration: underline;
+    transform: scale(1.1);
+}
+
+.card .card-image{
+    grid-area: image;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all .3s ease;
+}
+
+.card .card-image:hover img{
+    transform: scale(1.2);
+}
+
+.card .card-image img{
+    width: 100%;
+    height: 100%;
+    transition: all .3s ease;
+}
+
+.card .card-content{
+    grid-area: content;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 /* ******************************************* About Section **************************************************** */
 .about-content{
@@ -474,6 +677,12 @@ header{
     transition: all .3s ease;
 }
 
+#contact-form legend{
+    font-size: 2rem;
+    text-align: center;
+    margin: .3rem 0;
+}
+
 .form-group{
     margin: .5rem 0;
     display: flex;
@@ -497,10 +706,6 @@ header{
     border-bottom: 1px solid var(--main-color);
 }
 
-:invalid{
-    box-shadow: none;
-}
-
 .form-group input:not(input[type=submit]).error,
 .form-group textarea.error{
     border-bottom: 1px solid var(--error-red-color);
@@ -513,14 +718,29 @@ header{
     transform: scale(1.05);
 }
 
-.form-group input[type=submit]{
-    width: 50%;
+.form-group .submit-btn{
+    border: none;
+    background: none;
+    width: 5rem;
+    padding: .2rem 0;
     align-self: center;
-}
-.form-group input[type=submit]:hover,
-.form-group input[type=submit]:focus{
-    transform: scale(1.1);
+    transition: all .3s ease;
+    color: var(--backgroundOld);
+    background-color: var(--main-color);
+    border-radius: .5rem;
     cursor: pointer;
+}
+
+.form-group .submit-btn:hover,
+.form-group .submit-btn:focus{
+    transform: scale(1.1);
+    box-shadow: 2px 2px 15px 2px var(--white-opacity-color);
+}
+
+.form-group .submit-btn:disabled{
+    opacity: .5;
+    box-shadow: none;
+    cursor: not-allowed;
 }
 
 .contact-form-error{
@@ -556,26 +776,61 @@ header{
     text-align: center;
     margin-bottom: .5rem;
 }
-
+.contact-info h4{
+    text-align: center;
+    margin-bottom: .5rem;
+}
+.contact-info h4 span i{
+    font-size: 1.4rem;
+}
+.contact-info hr{
+    color: var(--main-color);
+    margin-bottom: .4rem;
+}
 .contact-info .info{
     margin: .5rem 0;
+    line-height: 3rem;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.contact-info .info div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
     align-items: center;
 }
 
-.contact-info .info a{
-    cursor: pointer;
-    padding: .2rem 0;
+.contact-info .info div i{
+    padding-right: .5rem;
+    padding-left: 1rem;
 }
 
-.contact-info .info a:hover{
+.contact-info .social-media{
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 1rem;
+    padding-top: 1rem;
+}
+
+.contact-info .social-media a{
+    cursor: pointer;
+    transition: all .3s ease;
+}
+.contact-info .social-media a:hover,
+.contact-info .social-media a:focus{
+    transform: scale(1.3);
     opacity: .7;
 }
 
-.contact-info .info i{
-    margin-right: .5rem;
+.contact-info .social-media a:not(a:last-child){
+    padding-right: 1rem;
 }
+    
 
 
 
@@ -611,7 +866,6 @@ header{
                          'image   description';
                          grid-template-rows: 10vh 25vh 25vh;
     grid-template-columns: 60% 1fr;
-
     }
     .about-presentation h1{
     padding: 0;
@@ -626,7 +880,6 @@ header{
         justify-self: center;
         padding: 0;
     }
-
     .about-presentation .description-info p{
         text-align: center;
         margin: .2rem 0;
@@ -634,12 +887,31 @@ header{
         padding-right: 1rem;
         font-size: 1.1rem;
     }
+    .about-info{
+        width: 80%;
+        margin: 0 auto;
+    }
     /* ******************************************* Contact Form ************************************************ */
+    .form-container{
+        display: grid;
+        grid-template-areas: 'legend          legend'
+                             'contact-form    contact-info';
+        gap: 1rem;
+        grid-template-columns: 60% 40%;
+    }
+    .form-legend{
+        grid-area: legend;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
     #contact-form{
-        width: 60%;
+        grid-area: contact-form;
+        width: 100%;
     }
     .contact-info{
-        width: 60%;
+        grid-area: contact-info;
+        width: 100%;
     }
 }
 
@@ -706,30 +978,64 @@ header{
         transform: scale(1.1, 1.1);
         opacity: .7;
     }
-    
     /* **************************************************** Presentation ****************************************** */
     .presentation-img img{
         filter: blur(1px);
     }
+
     .modal{
         width: 40%;
     }
     /* ******************************************* About Section ************************************************ */
     .about-presentation{
     grid-template-columns: 40% 1fr;
-
     }
+
     .about-presentation h1{
     padding: 0;
     }
+
     .about-presentation img{
         height: 90%;
         width: 80%;
     }
+
     .about-presentation .description-info p{
         font-size: 1.2rem;
         margin: .4rem 0;
         margin-left: -3rem;
+    }
+
+    .about-info{
+        width: 60%;
+        margin: 0 auto;
+    }
+    .about-info .tech-icons i{
+        margin: 0 .4rem;
+    }
+    /* ******************************************* Contact Form ************************************************ */
+    .form-container{
+        display: grid;
+        grid-template-areas: 'legend          legend'
+                             'contact-form    contact-info';
+        gap: 2rem 1rem;
+        grid-template-columns: 60% 40%;
+    }
+    .form-legend{
+        grid-area: legend;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    #contact-form{
+        grid-area: contact-form;
+        width: 70%;
+        margin: 0 auto;
+    }
+    .contact-info{
+        grid-area: contact-info;
+        width: 80%;
+        margin: auto -4rem;
     }
 }
 
