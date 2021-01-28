@@ -2,9 +2,7 @@
 (()=>{
     const $btnMenu = document.querySelector('.btn-menu');
     const $panelMenu = document.querySelector('.panel-menu');
-    // const $dropdownLink = document.querySelector('.dropdown-link');
-    // const $dropdownItems = document.querySelectorAll('.dropdown-item');
-   
+
     $btnMenu.addEventListener('click',(e)=>{
         $panelMenu.classList.toggle('none');
         setTimeout(() => {
@@ -78,29 +76,7 @@
                 }, 200);
             }
         }
-    })
-
-/* EN CASO DE TENER DROPDOWN, IDEA DE FUNCIONAMIENTO DE ESTO. PERO ESTE MENU NO TENDRA
-    QUEDA DE EJEMPLO DE USO PARA OTRO MENU QUE LO TENGA
-    ******************************* BORRAR CUANDO TERMINE ********************************************
-
-    $dropdownLink.addEventListener('mouseenter', (e)=> {
-        $dropdownItems.forEach((el)=> {
-            console.log(el);
-            if(el.classList.contains('none')){
-                el.classList.remove('none');
-            }
-        })
-    })
-    $dropdownLink.addEventListener('mouseleave', (e)=> {        
-        $dropdownItems.forEach((el)=> {
-            console.log(el);
-            if(!el.classList.contains('none')){
-                el.classList.add('none');
-            }
-        })
-    }) */
-
+    });
 })();
 
 /* ************************************** Modal - About ******************************************* */
