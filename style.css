@@ -539,7 +539,7 @@ header{
     grid-template-areas: 'presentation presentation'
                          '  info         info';
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 60vh auto;
+    grid-template-rows: 80vh auto;
     transition: all .3s ease;
 }
 
@@ -855,7 +855,7 @@ header{
         grid-template-areas: 'name     name'
                          'image   description'
                          'image   description';
-                         grid-template-rows: 10vh 25vh 25vh;
+                         grid-template-rows: 10vh 35vh 35vh;
     grid-template-columns: 60% 1fr;
     }
     .about-presentation h1{
@@ -990,7 +990,7 @@ header{
     }
     /* ******************************************* About Section ************************************************ */
     .about-presentation{
-    grid-template-columns: 40% 1fr;
+    grid-template-columns: 50% 1fr;
     }
     .about-presentation h1{
     padding: 0;
