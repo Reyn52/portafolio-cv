@@ -576,6 +576,7 @@ header{
     display: flex;
     align-self: center;
     justify-self: center;
+    text-align: center;
     padding: .5rem;
     font-size: 3rem;
     transition: all .3s ease;
@@ -628,6 +629,7 @@ header{
 
 .about-info h2{
     margin: .1rem 0;
+    text-align: center;
     transition: all .3s ease;
 }
 
@@ -836,7 +838,25 @@ header{
     padding-right: 1rem;
 }
 /* ******************************************* Media Queries **************************************************** */
-
+/* ************************ Dispositivos pantalla inferior a 360px, muy pequeños ********************************* */
+@media screen and (max-width: 360px){
+    .about-presentation img{
+        display: none;
+    }
+    .about-presentation .description-info{
+        margin-top: .5rem;
+    }
+    .contact-info .info{
+        margin: 0;
+        line-height: 2rem;
+        justify-content: center;
+        align-items: center;
+    }
+    .contact-info .info div:first-of-type{
+        flex-direction: column;
+        margin-bottom: .4rem;
+    }
+}
 /* ******************************************* Tamaño Ipad **************************************************** */
 @media screen and (min-width: 768px){
     .modal{
