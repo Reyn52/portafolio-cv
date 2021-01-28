@@ -124,7 +124,6 @@ eliminar borde en campos input invalidos, no es un borde ni un outline, en firef
 .modal{
     width: 70%;
     height: auto;
-    margin-top: -10rem;
     border-radius: 2rem;
     background: var(--main-color);
     padding: 1rem;
@@ -840,6 +839,9 @@ header{
 /* ******************************************* Media Queries **************************************************** */
 /* ************************ Dispositivos pantalla inferior a 360px, muy pequeños ********************************* */
 @media screen and (max-width: 360px){
+    .modal{
+        width: 80%;
+    }
     .about-presentation img{
         display: none;
     }
