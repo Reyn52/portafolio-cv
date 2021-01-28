@@ -122,12 +122,12 @@ eliminar borde en campos input invalidos, no es un borde ni un outline, en firef
 }
 
 .modal{
-    width: 60%;
-    height: 40%;
+    width: 70%;
+    height: auto;
     margin-top: -10rem;
     border-radius: 2rem;
     background: var(--main-color);
-    padding: 2rem;
+    padding: 1rem;
     position: relative;
     transform: scale(1);
     transition: all .5s ease;
@@ -183,7 +183,7 @@ eliminar borde en campos input invalidos, no es un borde ni un outline, en firef
 }
 
 .content p{
-    margin: .5rem 0;
+    margin: .2rem 0;
     text-align: center;
 }
 
@@ -199,7 +199,6 @@ eliminar borde en campos input invalidos, no es un borde ni un outline, en firef
     align-items: center;
     position: relative;
     transition: all .3s ease;
-    /* overflow: hidden; */
 }
 
 .content-image img{
@@ -287,6 +286,26 @@ body:last-child{
     margin-bottom: calc(var(--header-height) + 1rem);
 }
 
+/* Colores de iconos de tecnologias en la seccion "about"  */
+.fa-html5:last-child{
+    color: #dd4d25;
+}
+.fa-css3-alt:last-child{
+    color: #146eb0;
+}
+.fa-js:last-child{
+    color: #e8d44d;
+    background-color: #000;
+}
+.fa-php:last-child{
+    color: #7377ad;
+}
+.fa-bootstrap:last-child{
+    color: #5a3a7b;
+}
+.fa-database:last-child{
+    color: #5193ba;
+}
 /* ************************************************** NavMenu **************************************************** */
 header{
     width: 100%;
@@ -416,7 +435,7 @@ header{
 }
 .presentation-img img{
     width: 100%;
-    height: 100%;
+    max-height: 50vh;
 }
 /* ******************************************* Project Section **************************************************** */
 #projects h2{
@@ -812,26 +831,9 @@ header{
 .contact-info .social-media a:not(a:last-child){
     padding-right: 1rem;
 }
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ******************************************* Media Queries **************************************************** */
+
+/* ******************************************* Tamaño Ipad **************************************************** */
 @media screen and (min-width: 768px){
     .modal{
         width: 50%;
@@ -905,8 +907,11 @@ header{
         width: 100%;
     }
 }
-
+/* ************************************** Tamaño escritorio ******************************************** */
 @media screen and (min-width: 992px){
+    .modal{
+        width: 40%;
+    }
     /* ********************************************* NavMenu *************************************************** */
     header{
     position: sticky;
@@ -1035,7 +1040,4 @@ header{
         width: 80%;
         margin: auto -4rem;
     }
-}
-
-@media screen and (min-width: 1024px){
 }
