@@ -98,37 +98,51 @@
             /* Quizas manejar con un switch case sea mejor?
                 hacer la prueba y ver cual agrada mas */
             if(el.classList.contains('html')){
-                console.log('html');
                 $modalContent.innerHTML = `
-                    <p>Contenido con informacion descriptiva y corta sobre el conocimiento que posea sobre HTML</p>
+                    <p>A nivel intermedio; me hace falta leer más y aplicar mucho más los conceptos sobre SEO pero no soy ajeno a ellos.</p>
+                    <p>Principalmente me hacen falta más proyectos donde aplicarlos.</p>
                     <i class='fab fa-html5 fa-2x'></i>
                 `;
             }
             else if(el.classList.contains('css')){
-                console.log('css');
                 $modalContent.innerHTML = `
-                    <p>Contenido con informacion descriptiva y corta sobre el conocimiento que posea sobre CSS</p>
-                    <i class='fab fa-css3 fa-2x'></i>
+                    <p>Entre un intermedio y avanzado. Manejo aceptable de la <i>grid</i> y <i>flexbox</i>; igualmente de pseudo clases, no mucho trasteo con los pseudo elementos <code>::after</code> ni <code>::before</code>.</p>
+                    <p>Y en cuanto animaciones, puedo realizar sencillas pero realmente no suelo utilizarlas y en caso de hacerlo de forma muy especifica, suelo guiarme de otros ejemplos en la web o usar alguna librería.</p>
+                    <i class='fab fa-css3-alt fa-2x'></i>
                 `;
             }
             else if(el.classList.contains('javascript')){
-                console.log('js'); $modalContent.innerHTML = `
-                    <p>Contenido con informacion descriptiva y corta sobre el conocimiento que posea sobre JavaScript</p>
+                $modalContent.innerHTML = `
+                    <p>Intermedio a varios pasos de avanzado con mucho por aprender y practicar aún. Conozco sobre el manejo de API's y uso de AJAX; de igual manera del trabajo con módulos, aunque en este proyecto tan pequeño solo trabajé con funciones anónimas auto ejecutables.</p>
+                    <p>En cuanto a <i>frameworks</i>, crudo. Me he leído la documentación de React por lo que conozco la manera de crear y manejar componentes pero aún me falta práctica para poder añadirlo como conocimiento adquirido y manejado.</p>
                     <i class='fab fa-js fa-2x'></i>
                 `;
             }
-            else if(el.classList.contains('git')){
-                console.log('git');
+            else if(el.classList.contains('github')){
                 $modalContent.innerHTML = `
-                    <p>Contenido con informacion descriptiva y corta sobre el conocimiento que posea sobre GIT</p>
-                    <i class='fab fa-git fa-2x'></i>
+                    <p>Conocimiento sumamente básico realmente. El uso de GIT lo suelo limitar al <i>backup</i> del código y nombrar cada modificación de forma descriptiva para llevar el seguimiento de lo que se hizo en cada caso.</p>
+                    <i class='fab fa-github fa-2x'></i>
                 `;
             }
             else if(el.classList.contains('php')){
-                console.log('php');
                 $modalContent.innerHTML = `
-                    <p>Contenido con informacion descriptiva y corta sobre el conocimiento que posea sobre PHP</p>
+                    <p>Básico. El mini proyecto de "promoeventos" fue trabajado con PHP. Puedo realizar todas las operaciones de un CRUD con PHP, evitar inyecciones de datos y demás operaciones enfocadas al <i>Front</i>.</p>
+                    <p>Un poco falto de práctica pero conozco lo suficiente de la base del lenguaje para entender el codigo y trabajarlo.</p>
                     <i class='fab fa-php fa-2x'></i>
+                `;
+            }
+            else if(el.classList.contains('bbdd')){
+                $modalContent.innerHTML = `
+                    <p>SQL Básico. Junto a PHP lo utilicé en el ejemplo de "promoeventos". La base de datos usada en él fue la de MySQL por lo cúal he leído y de igual manera manejo lo básico del lenguaje SQL.</p>
+                    <p>Por tanto, conocimientos para realizar consultas, modificaciones e inserción de datos. No muy experto ni de cerca en cuanto a trabajar con conjunciones de tablas por lo que me suele tomar un poco más de tiempo. De igual manera, al momento, un poco falto de práctica.</p>
+                    <i class='fas fa-database fa-2x'></i>
+                `;
+            }
+            else if(el.classList.contains('bootstrap')){
+                $modalContent.innerHTML = `
+                    <p>Entre básico e intermedio. Debido a que suelo trabajar con <i>vanilla</i> CSS a manera de práctica.</p>
+                    <p>Aún así, y debido a esto, no soy ajeno al uso de la librería. En el ejemplo de "promoeventos" me serví bastante de esta y debido a eso conozco bastante bien su funcionamiento y cómo utilizarlo y modificar de forma sencilla según requiera.</p>
+                    <i class='fab fa-bootstrap fa-2x'></i>
                 `;
             }
         
