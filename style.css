@@ -943,6 +943,9 @@ header{
 }
 /* ************************************** Tamaño escritorio ******************************************** */
 @media screen and (min-width: 992px){
+    [id]{
+        scroll-margin-top: 4ex;
+    }
     .modal{
         width: 40%;
     }
