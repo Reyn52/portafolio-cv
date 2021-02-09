@@ -101,7 +101,7 @@ eliminar borde en campos input invalidos, no es un borde ni un outline, en firef
 
 /* Arreglo del scroll */
 [id]{
-    scroll-margin-top: 3ex;
+    scroll-margin-top: 2ex;
 }
 
 /* ********************************************** Components ****************************************************** */
@@ -944,7 +944,7 @@ header{
 /* ************************************** Tamaño escritorio ******************************************** */
 @media screen and (min-width: 992px){
     [id]{
-        scroll-margin-top: 4ex;
+        scroll-margin-top: 8ex;
     }
     .modal{
         width: 40%;
