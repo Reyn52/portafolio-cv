@@ -101,7 +101,7 @@ eliminar borde en campos input invalidos, no es un borde ni un outline, en firef
 
 /* Arreglo del scroll */
 [id]{
-    scroll-margin-top: 2ex;
+    scroll-margin-top: 3ex;
 }
 
 /* ********************************************** Components ****************************************************** */
